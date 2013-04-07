@@ -16,12 +16,21 @@
 
 @synthesize connectionLabel = _connectionLabel;
 @synthesize led2Button = _led2Button;
+@synthesize led2Slider = _led2Slider;
 @synthesize led3Button = _led3Button;
+@synthesize led3Slider = _led3Slider;
 @synthesize led4Button = _led4Button;
+@synthesize led4Slider = _led4Slider;
 @synthesize led5Button = _led5Button;
+@synthesize led5Slider = _led5Slider;
 @synthesize clearButton = _clearButton;
 
-int pinState[6];
+@synthesize led2 = _led2;
+@synthesize led3 = _led3;
+@synthesize led4 = _led4;
+@synthesize led5 = _led5;
+
+#pragma mark - iOS delegate methods
 
 - (void)viewDidLoad
 {
@@ -34,24 +43,17 @@ int pinState[6];
     [Konashi addObserver:self selector:@selector(updateLabel) name:KONASHI_EVENT_DISCONNECTED];
     [Konashi addObserver:self selector:@selector(pio_updated) name:KONASHI_EVENT_UPDATE_PIO_INPUT];
     
-
-    [self.led2Button setHidden:true];
-    [self.led3Button setHidden:true];
-    [self.led4Button setHidden:true];
-    [self.led5Button setHidden:true];
-    [self.clearButton setHidden:true];
-    
-    // Initialize pinState
-    for (int i = 0; i < 6; ++i) {
-        pinState[i] = LOW;
-    }
+    [self setVisibilityOfLEDControllers:NO];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Button Actions
 
 - (IBAction)find:(id)sender
 {
@@ -65,89 +67,53 @@ int pinState[6];
 
 - (IBAction)toggleLED:(UIButton *)sender
 {
-    NSString *senderName = sender.currentTitle;
-    int senderPin = [[senderName substringFromIndex:(senderName.length -1)] intValue];
-    NSLog(@"String length = %d", senderName.length);
-    NSLog(@"LED%d", senderPin);
-    int setValue = 0;
-    
-    if (pinState[senderPin] == HIGH)
+    KonashiPWMLED *led = [self findLEDbyName:sender.currentTitle];
+    UISlider *slider = [self findSliderbyLEDName:sender.currentTitle];
+    [led toggleOutput];
+    if (led.state == HIGH)
     {
-        setValue = LOW;
-        NSLog(@"set HIGH");
+        [slider setValue:100];
     }
     else
     {
-        setValue = HIGH;
-        NSLog(@"set LOW");
+        [slider setValue:0];
     }
-    [Konashi digitalWrite:[self setPinNum:senderPin] value:setValue];
-    pinState[senderPin] = setValue;
-
-}
-
-- (int) setPinNum:(int) senderNum
-{
-    int returnValue;
-    switch(senderNum)
-    {
-        case 5:
-            returnValue = LED5;
-            break;
-        case 4:
-            returnValue = LED4;
-            break;
-        case 3:
-            returnValue = LED3;
-            break;
-        case 2:
-            returnValue = LED2;
-            break;
-    }
-    return returnValue;
 }
 
 - (IBAction)clearLED:(id)sender
 {
-    [Konashi digitalWrite:LED2 value:LOW];
-    [Konashi digitalWrite:LED3 value:LOW];
-    [Konashi digitalWrite:LED4 value:LOW];
-    [Konashi digitalWrite:LED5 value:LOW];
-    for (int i = 0; i < 6; ++i)
-    {
-        pinState[i] = LOW;
-    }
-
+    [self.led2 updateRatio:0];
+    [self.led3 updateRatio:0];
+    [self.led4 updateRatio:0];
+    [self.led5 updateRatio:0];
+    [self.led2Slider setValue:0];
+    [self.led3Slider setValue:0];
+    [self.led4Slider setValue:0];
+    [self.led5Slider setValue:0];
 }
 
-
-- (void)ready
+- (IBAction)updateLED2Duty:(UISlider *)slider
 {
-    [Konashi pinMode:PIO0 mode:INPUT];
-    [Konashi pinMode:LED2 mode:OUTPUT];
-    [Konashi pinMode:LED3 mode:OUTPUT];
-    [Konashi pinMode:LED4 mode:OUTPUT];
-    [Konashi pinMode:LED5 mode:OUTPUT];
-    self.connectionLabel.text = @"Connected";
-    NSLog(@"connection ready");
-    [self.led2Button setHidden:false];
-    [self.led3Button setHidden:false];
-    [self.led4Button setHidden:false];
-    [self.led5Button setHidden:false];
-    [self.clearButton setHidden:false];
-
+    [self.led2 updateRatio:slider.value];
 }
 
-- (void)updateLabel
+- (IBAction)updateLED3Duty:(UISlider *)slider
 {
-    self.connectionLabel.text = @"Not connected";
-    [self.led2Button setHidden:true];
-    [self.led3Button setHidden:true];
-    [self.led4Button setHidden:true];
-    [self.led5Button setHidden:true];
-    [self.clearButton setHidden:true];
-
+    [self.led3 updateRatio:slider.value];
 }
+
+- (IBAction)updateLED4Duty:(UISlider *)slider
+{
+    [self.led4 updateRatio:slider.value];
+}
+
+- (IBAction)updateLED5Duty:(UISlider *)slider
+{
+    [self.led5 updateRatio:slider.value];
+}
+
+
+#pragma mark - Konashi Observer
 
 - (void)pio_updated
 {
@@ -157,4 +123,84 @@ int pinState[6];
     }
 }
 
+- (void)ready
+{
+    // Initializing LEDs
+    self.led2 = [[KonashiPWMLED alloc] initWithName:@"LED2" pinNum:LED2 state:LOW ratio:100];
+    self.led3 = [[KonashiPWMLED alloc] initWithName:@"LED3" pinNum:LED3 state:LOW ratio:100];
+    self.led4 = [[KonashiPWMLED alloc] initWithName:@"LED4" pinNum:LED4 state:LOW ratio:100];
+    self.led5 = [[KonashiPWMLED alloc] initWithName:@"LED5" pinNum:LED5 state:LOW ratio:100];
+    self.connectionLabel.text = @"Connected";
+    NSLog(@"connection ready");
+    [self.led2Slider setValue:0];
+    [self.led3Slider setValue:0];
+    [self.led4Slider setValue:0];
+    [self.led5Slider setValue:0];
+    [self setVisibilityOfLEDControllers:YES];
+}
+
+#pragma mark - helper methods
+
+- (KonashiPWMLED *)findLEDbyName:(NSString *)name
+{
+    KonashiPWMLED *returnLED;
+    if ([name isEqualToString:@"LED2"])
+    {
+        returnLED = self.led2;
+    }
+    else if ([name isEqualToString:@"LED3"])
+    {
+        returnLED = self.led3;
+    }
+    else if ([name isEqualToString:@"LED4"])
+    {
+        returnLED = self.led4;
+    }
+    else if ([name isEqualToString:@"LED5"])
+    {
+        returnLED = self.led5;
+    }
+    return returnLED;
+}
+
+- (UISlider *)findSliderbyLEDName:(NSString *)name
+{
+    UISlider *returnSlider;
+    if ([name isEqualToString:@"LED2"])
+    {
+        returnSlider = self.led2Slider;
+    }
+    else if ([name isEqualToString:@"LED3"])
+    {
+        returnSlider = self.led3Slider;
+    }
+    else if ([name isEqualToString:@"LED4"])
+    {
+        returnSlider = self.led4Slider;
+    }
+    else if ([name isEqualToString:@"LED5"])
+    {
+        returnSlider = self.led5Slider;
+    }
+    return returnSlider;
+}
+
+- (void)setVisibilityOfLEDControllers:(BOOL)value
+{
+    [self.led2Button setHidden:!value];
+    [self.led3Button setHidden:!value];
+    [self.led4Button setHidden:!value];
+    [self.led5Button setHidden:!value];
+    [self.clearButton setHidden:!value];
+    [self.led2Slider setHidden:!value];
+    [self.led3Slider setHidden:!value];
+    [self.led4Slider setHidden:!value];
+    [self.led5Slider setHidden:!value];
+}
+
+- (void)updateLabel
+{
+    self.connectionLabel.text = @"Not connected";
+    [self setVisibilityOfLEDControllers:NO];
+}
 @end
