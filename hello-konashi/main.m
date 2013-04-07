@@ -3,7 +3,7 @@
 //  hello-konashi
 //
 //  Created by Shiro Fukuda on 2013/04/07.
-//  Copyright (c) 2013年 chan-shiro. All rights reserved.
+//  Copyright (c) 2013年 chan-shiro. Some rights reserved.
 //
 
 #import <UIKit/UIKit.h>

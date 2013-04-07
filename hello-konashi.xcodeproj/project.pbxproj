@@ -18,6 +18,8 @@
 		BA13832E1711498B00DC4D9E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA13832D1711498B00DC4D9E /* Default-568h@2x.png */; };
 		BA1383311711498B00DC4D9E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA13832F1711498B00DC4D9E /* MainStoryboard.storyboard */; };
 		BA1383341711498B00DC4D9E /* HelloKonashiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1383331711498B00DC4D9E /* HelloKonashiViewController.m */; };
+		BA13833B171149A500DC4D9E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA13833A171149A500DC4D9E /* CoreBluetooth.framework */; };
+		BA13844D17114B9A00DC4D9E /* Konashi.m in Sources */ = {isa = PBXBuildFile; fileRef = BA13844B17114B9A00DC4D9E /* Konashi.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		BA1383301711498B00DC4D9E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		BA1383321711498B00DC4D9E /* HelloKonashiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloKonashiViewController.h; sourceTree = "<group>"; };
 		BA1383331711498B00DC4D9E /* HelloKonashiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloKonashiViewController.m; sourceTree = "<group>"; };
+		BA13833A171149A500DC4D9E /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		BA13844A17114B9A00DC4D9E /* Konashi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Konashi.h; sourceTree = "<group>"; };
+		BA13844B17114B9A00DC4D9E /* Konashi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Konashi.m; sourceTree = "<group>"; };
+		BA13844C17114B9A00DC4D9E /* KonashiDb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KonashiDb.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA13833B171149A500DC4D9E /* CoreBluetooth.framework in Frameworks */,
 				BA1383181711498B00DC4D9E /* UIKit.framework in Frameworks */,
 				BA13831A1711498B00DC4D9E /* Foundation.framework in Frameworks */,
 				BA13831C1711498B00DC4D9E /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +63,8 @@
 		BA13830B1711498B00DC4D9E = {
 			isa = PBXGroup;
 			children = (
+				BA13844917114B9A00DC4D9E /* Konashi */,
+				BA13833A171149A500DC4D9E /* CoreBluetooth.framework */,
 				BA13831D1711498B00DC4D9E /* hello-konashi */,
 				BA1383161711498B00DC4D9E /* Frameworks */,
 				BA1383151711498B00DC4D9E /* Products */,
@@ -105,6 +114,16 @@
 				BA13832D1711498B00DC4D9E /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BA13844917114B9A00DC4D9E /* Konashi */ = {
+			isa = PBXGroup;
+			children = (
+				BA13844A17114B9A00DC4D9E /* Konashi.h */,
+				BA13844B17114B9A00DC4D9E /* Konashi.m */,
+				BA13844C17114B9A00DC4D9E /* KonashiDb.h */,
+			);
+			path = Konashi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +196,7 @@
 				BA1383241711498B00DC4D9E /* main.m in Sources */,
 				BA1383281711498B00DC4D9E /* HelloKonashiAppDelegate.m in Sources */,
 				BA1383341711498B00DC4D9E /* HelloKonashiViewController.m in Sources */,
+				BA13844D17114B9A00DC4D9E /* Konashi.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
