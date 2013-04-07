@@ -3,7 +3,7 @@
 //  hello-konashi
 //
 //  Created by Shiro Fukuda on 2013/04/07.
-//  Copyright (c) 2013年 chan-shiro. Some rights reserved.
+//  Copyright (c) 2013 chan-shiro. Some rights reserved.
 //
 
 #import "HelloKonashiAppDelegate.h"
