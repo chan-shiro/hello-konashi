@@ -66,7 +66,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rve-Xl-mOm">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="141" id="dzW-mD-YuV"/>
+                                    <constraint firstAttribute="width" constant="141" id="Ljg-fX-Dsv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="LED2">
@@ -111,28 +111,62 @@
                                     <action selector="disconnect:" destination="2" eventType="touchUpInside" id="Xyy-19-nzf"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="T42-9b-bn8" userLabel="LED2">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="mjY-Mz-m4Q"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="updateLED2Duty:" destination="2" eventType="valueChanged" id="MXQ-c2-PJ4"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="YYx-lc-QfG">
+                                <connections>
+                                    <action selector="updateLED3Duty:" destination="2" eventType="valueChanged" id="pvO-43-qCn"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="gij-bb-95F">
+                                <connections>
+                                    <action selector="updateLED4Duty:" destination="2" eventType="valueChanged" id="Ao2-Vn-ayD"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="YKC-fx-PHu">
+                                <connections>
+                                    <action selector="updateLED5Duty:" destination="2" eventType="valueChanged" id="Jik-Ab-Nep"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="LLF-tW-ksK" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="1A4-wf-Adh"/>
+                            <constraint firstItem="T42-9b-bn8" firstAttribute="top" secondItem="3" secondAttribute="top" constant="209" id="1sG-yB-dtd"/>
                             <constraint firstItem="cPe-iS-Tk9" firstAttribute="top" secondItem="3" secondAttribute="top" constant="132" id="5zq-Kb-BQI"/>
                             <constraint firstItem="rLp-E3-kDk" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="70R-aY-1SQ"/>
-                            <constraint firstItem="LLF-tW-ksK" firstAttribute="trailing" secondItem="l9V-11-R5J" secondAttribute="trailing" type="default" id="75q-ac-MXb"/>
-                            <constraint firstItem="cPe-iS-Tk9" firstAttribute="centerX" secondItem="mxU-Bd-CYR" secondAttribute="centerX" type="default" id="8m8-tb-IwE"/>
-                            <constraint firstItem="l9V-11-R5J" firstAttribute="trailing" secondItem="H8m-K4-3D9" secondAttribute="trailing" type="default" id="CJR-ha-3VT"/>
-                            <constraint firstItem="rve-Xl-mOm" firstAttribute="leading" secondItem="ucJ-8y-YA7" secondAttribute="leading" type="default" id="Fib-8x-ndf"/>
-                            <constraint firstItem="l9V-11-R5J" firstAttribute="leading" secondItem="LLF-tW-ksK" secondAttribute="leading" type="default" id="ISG-ma-PnU"/>
+                            <constraint firstAttribute="bottom" secondItem="l9V-11-R5J" secondAttribute="bottom" constant="110" id="8lc-ho-7I4"/>
+                            <constraint firstItem="H8m-K4-3D9" firstAttribute="trailing" secondItem="ucJ-8y-YA7" secondAttribute="trailing" type="default" id="EqL-b9-wfo"/>
+                            <constraint firstItem="YKC-fx-PHu" firstAttribute="leading" secondItem="gij-bb-95F" secondAttribute="leading" type="default" id="F9T-gU-RLo"/>
+                            <constraint firstAttribute="bottom" secondItem="H8m-K4-3D9" secondAttribute="bottom" constant="175" id="HVK-qF-6bP"/>
                             <constraint firstAttribute="trailing" secondItem="cPe-iS-Tk9" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Lxo-S5-MHV"/>
                             <constraint firstItem="mxU-Bd-CYR" firstAttribute="top" secondItem="3" secondAttribute="top" constant="64" id="ONS-Nq-6xn"/>
-                            <constraint firstAttribute="bottom" secondItem="ucJ-8y-YA7" secondAttribute="bottom" constant="225" id="Oca-wX-nNe"/>
-                            <constraint firstAttribute="bottom" secondItem="H8m-K4-3D9" secondAttribute="bottom" constant="153" id="Ukj-yd-byo"/>
-                            <constraint firstItem="l9V-11-R5J" firstAttribute="leading" secondItem="H8m-K4-3D9" secondAttribute="leading" type="default" id="WlC-6j-TWF"/>
-                            <constraint firstItem="H8m-K4-3D9" firstAttribute="leading" secondItem="ucJ-8y-YA7" secondAttribute="leading" type="default" id="YXc-yJ-jv7"/>
-                            <constraint firstItem="cPe-iS-Tk9" firstAttribute="centerX" secondItem="rve-Xl-mOm" secondAttribute="centerX" type="default" id="hz2-ic-XTd"/>
-                            <constraint firstItem="rve-Xl-mOm" firstAttribute="top" secondItem="3" secondAttribute="top" constant="201" id="lPL-SN-ZM3"/>
-                            <constraint firstItem="H8m-K4-3D9" firstAttribute="trailing" secondItem="ucJ-8y-YA7" secondAttribute="trailing" type="default" id="ovG-pp-H6D"/>
-                            <constraint firstAttribute="bottom" secondItem="LLF-tW-ksK" secondAttribute="bottom" constant="12" id="pIF-tc-2yD"/>
-                            <constraint firstAttribute="bottom" secondItem="l9V-11-R5J" secondAttribute="bottom" constant="82" id="rch-aX-A8W"/>
-                            <constraint firstItem="rve-Xl-mOm" firstAttribute="trailing" secondItem="ucJ-8y-YA7" secondAttribute="trailing" type="default" id="toC-Dx-hkB"/>
+                            <constraint firstItem="ucJ-8y-YA7" firstAttribute="top" secondItem="3" secondAttribute="top" constant="263" id="OeB-rh-fvC"/>
+                            <constraint firstAttribute="trailing" secondItem="gij-bb-95F" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="SpC-s2-YSv"/>
+                            <constraint firstItem="gij-bb-95F" firstAttribute="leading" secondItem="YYx-lc-QfG" secondAttribute="leading" type="default" id="UPT-y9-C4q"/>
+                            <constraint firstItem="ucJ-8y-YA7" firstAttribute="trailing" secondItem="rve-Xl-mOm" secondAttribute="trailing" type="default" id="Y9S-SE-ui0"/>
+                            <constraint firstAttribute="trailing" secondItem="LLF-tW-ksK" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="YXV-lV-p10"/>
+                            <constraint firstItem="H8m-K4-3D9" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Yd0-ri-eiy"/>
+                            <constraint firstAttribute="bottom" secondItem="YKC-fx-PHu" secondAttribute="bottom" constant="120" id="a7j-ON-gtF"/>
+                            <constraint firstItem="rve-Xl-mOm" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cOe-7G-tJg"/>
+                            <constraint firstAttribute="trailing" secondItem="YKC-fx-PHu" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cjK-3d-nhp"/>
+                            <constraint firstItem="rve-Xl-mOm" firstAttribute="top" secondItem="3" secondAttribute="top" constant="198" id="fF9-Wu-avx"/>
+                            <constraint firstAttribute="trailing" secondItem="T42-9b-bn8" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="fkr-9F-sQd"/>
+                            <constraint firstAttribute="bottom" secondItem="gij-bb-95F" secondAttribute="bottom" constant="185" id="gNM-dn-fd1"/>
+                            <constraint firstAttribute="bottom" secondItem="YYx-lc-QfG" secondAttribute="bottom" constant="252" id="h2R-QL-K5b"/>
+                            <constraint firstItem="ucJ-8y-YA7" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hrz-kQ-Naz"/>
+                            <constraint firstItem="l9V-11-R5J" firstAttribute="trailing" secondItem="H8m-K4-3D9" secondAttribute="trailing" type="default" id="ifR-ro-i8m"/>
+                            <constraint firstItem="l9V-11-R5J" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="igI-6m-8eB"/>
+                            <constraint firstItem="YYx-lc-QfG" firstAttribute="leading" secondItem="T42-9b-bn8" secondAttribute="leading" type="default" id="k0Q-X4-MOc"/>
+                            <constraint firstItem="LLF-tW-ksK" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="m3k-5x-O3B"/>
+                            <constraint firstAttribute="trailing" secondItem="mxU-Bd-CYR" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="mjr-At-pAU"/>
+                            <constraint firstAttribute="trailing" secondItem="YYx-lc-QfG" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="nAK-uP-fXM"/>
                             <constraint firstItem="mxU-Bd-CYR" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="v13-EX-EAW"/>
                             <constraint firstItem="cPe-iS-Tk9" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="x4B-lo-tVF"/>
                             <constraint firstItem="rLp-E3-kDk" firstAttribute="centerX" secondItem="mxU-Bd-CYR" secondAttribute="centerX" type="default" id="y7P-y3-zNQ"/>
@@ -142,9 +176,13 @@
                         <outlet property="clearButton" destination="LLF-tW-ksK" id="LEC-Sz-ybC"/>
                         <outlet property="connectionLabel" destination="rLp-E3-kDk" id="YrL-lA-iFL"/>
                         <outlet property="led2Button" destination="rve-Xl-mOm" id="9yH-py-mZo"/>
+                        <outlet property="led2Slider" destination="T42-9b-bn8" id="AAr-h0-foa"/>
                         <outlet property="led3Button" destination="ucJ-8y-YA7" id="xB8-Er-p7k"/>
+                        <outlet property="led3Slider" destination="YYx-lc-QfG" id="FHI-zv-aZk"/>
                         <outlet property="led4Button" destination="H8m-K4-3D9" id="bVY-OP-gRt"/>
+                        <outlet property="led4Slider" destination="gij-bb-95F" id="ZBA-tm-i10"/>
                         <outlet property="led5Button" destination="l9V-11-R5J" id="7x3-fB-xev"/>
+                        <outlet property="led5Slider" destination="YKC-fx-PHu" id="ZHb-bq-Nwq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -160,12 +198,20 @@
                 <relationship kind="action" name="disconnect:"/>
                 <relationship kind="action" name="find:"/>
                 <relationship kind="action" name="toggleLED:" candidateClass="UIButton"/>
+                <relationship kind="action" name="updateLED2Duty:" candidateClass="UISlider"/>
+                <relationship kind="action" name="updateLED3Duty:" candidateClass="UISlider"/>
+                <relationship kind="action" name="updateLED4Duty:" candidateClass="UISlider"/>
+                <relationship kind="action" name="updateLED5Duty:" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="clearButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="connectionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="led2Button" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="led2Slider" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="led3Button" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="led3Slider" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="led4Button" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="led4Slider" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="led5Button" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="led5Slider" candidateClass="UISlider"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">

@@ -20,6 +20,7 @@
 		BA1383341711498B00DC4D9E /* HelloKonashiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1383331711498B00DC4D9E /* HelloKonashiViewController.m */; };
 		BA13833B171149A500DC4D9E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA13833A171149A500DC4D9E /* CoreBluetooth.framework */; };
 		BA13844D17114B9A00DC4D9E /* Konashi.m in Sources */ = {isa = PBXBuildFile; fileRef = BA13844B17114B9A00DC4D9E /* Konashi.m */; };
+		BA138450171194DE00DC4D9E /* KonashiPWMLED.m in Sources */ = {isa = PBXBuildFile; fileRef = BA13844F171194DE00DC4D9E /* KonashiPWMLED.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		BA13844A17114B9A00DC4D9E /* Konashi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Konashi.h; sourceTree = "<group>"; };
 		BA13844B17114B9A00DC4D9E /* Konashi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Konashi.m; sourceTree = "<group>"; };
 		BA13844C17114B9A00DC4D9E /* KonashiDb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KonashiDb.h; sourceTree = "<group>"; };
+		BA13844E171194DD00DC4D9E /* KonashiPWMLED.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KonashiPWMLED.h; sourceTree = "<group>"; };
+		BA13844F171194DE00DC4D9E /* KonashiPWMLED.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KonashiPWMLED.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,8 @@
 				BA1383261711498B00DC4D9E /* HelloKonashiAppDelegate.h */,
 				BA1383271711498B00DC4D9E /* HelloKonashiAppDelegate.m */,
 				BA13832F1711498B00DC4D9E /* MainStoryboard.storyboard */,
+				BA13844E171194DD00DC4D9E /* KonashiPWMLED.h */,
+				BA13844F171194DE00DC4D9E /* KonashiPWMLED.m */,
 				BA1383321711498B00DC4D9E /* HelloKonashiViewController.h */,
 				BA1383331711498B00DC4D9E /* HelloKonashiViewController.m */,
 				BA13831E1711498B00DC4D9E /* Supporting Files */,
@@ -197,6 +202,7 @@
 				BA1383281711498B00DC4D9E /* HelloKonashiAppDelegate.m in Sources */,
 				BA1383341711498B00DC4D9E /* HelloKonashiViewController.m in Sources */,
 				BA13844D17114B9A00DC4D9E /* Konashi.m in Sources */,
+				BA138450171194DE00DC4D9E /* KonashiPWMLED.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +325,7 @@
 				BA1383391711498B00DC4D9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
