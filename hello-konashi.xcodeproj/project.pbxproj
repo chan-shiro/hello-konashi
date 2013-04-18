@@ -21,6 +21,7 @@
 		BA13833B171149A500DC4D9E /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA13833A171149A500DC4D9E /* CoreBluetooth.framework */; };
 		BA13844D17114B9A00DC4D9E /* Konashi.m in Sources */ = {isa = PBXBuildFile; fileRef = BA13844B17114B9A00DC4D9E /* Konashi.m */; };
 		BA138450171194DE00DC4D9E /* KonashiPWMLED.m in Sources */ = {isa = PBXBuildFile; fileRef = BA13844F171194DE00DC4D9E /* KonashiPWMLED.m */; };
+		BAA72FBF17204C4600F5E27D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = BAA72FBE17204C4600F5E27D /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		BA13844C17114B9A00DC4D9E /* KonashiDb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KonashiDb.h; sourceTree = "<group>"; };
 		BA13844E171194DD00DC4D9E /* KonashiPWMLED.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KonashiPWMLED.h; sourceTree = "<group>"; };
 		BA13844F171194DE00DC4D9E /* KonashiPWMLED.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KonashiPWMLED.m; sourceTree = "<group>"; };
+		BAA72FBE17204C4600F5E27D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				BA1383321711498B00DC4D9E /* HelloKonashiViewController.h */,
 				BA1383331711498B00DC4D9E /* HelloKonashiViewController.m */,
 				BA13831E1711498B00DC4D9E /* Supporting Files */,
+				BAA72FBE17204C4600F5E27D /* LICENSE */,
 			);
 			path = "hello-konashi";
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				BA13832C1711498B00DC4D9E /* Default@2x.png in Resources */,
 				BA13832E1711498B00DC4D9E /* Default-568h@2x.png in Resources */,
 				BA1383311711498B00DC4D9E /* MainStoryboard.storyboard in Resources */,
+				BAA72FBF17204C4600F5E27D /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
